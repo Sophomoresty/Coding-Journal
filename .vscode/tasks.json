@@ -1,0 +1,59 @@
+// .vscode/tasks.json
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "C/C++: g++ Build in build subdirectory",
+			"type": "shell",
+			// 修改这里，将完整的命令字符串放在 command 中
+			"command": "mkdir -p build && g++ -g \"${file}\" -o \"${fileDirname}/build/${fileBasenameNoExtension}\"",
+			// 移除 args 属性
+			// "args": [
+			//     "-g",
+			//     "${file}",
+			//     "-o",
+			//     "${fileDirname}/build/${fileBasenameNoExtension}"
+			// ],
+			"options": {
+				"cwd": "${fileDirname}" // 在当前文件目录下执行命令
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"clear": true,
+				"reveal": "always",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "C/C++: gcc Build in build subdirectory",
+			"type": "shell",
+			// 修改这里，将完整的命令字符串放在 command 中
+			"command": "mkdir -p build && gcc -g \"${file}\" -o \"${fileDirname}/build/${fileBasenameNoExtension}\"",
+			// 移除 args 属性
+			// "args": [
+			//     "-g",
+			//     "${file}",
+			//     "-o",
+			//     "${fileDirname}/build/${fileBasenameNoExtension}"
+			// ],
+			"options": {
+				"cwd": "${fileDirname}" // 在当前文件目录下执行命令
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"presentation": {
+				"clear": true,
+				"reveal": "always",
+				"panel": "dedicated"
+			}
+		}
+	]
+}
